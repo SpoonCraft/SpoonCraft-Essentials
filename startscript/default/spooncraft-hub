@@ -1,0 +1,48 @@
+## Settings for minecraft-init-script
+
+# Nice looking name of service for script to report back to users
+SERVERNAME="SpoonCraft Hub"
+
+# Filename of server binary
+SERVICE="minecraft_server.jar"
+
+# URL of server executable for update checking - http://cbukk.it/craftbukkit.jar is the recommended latest Craftbukkit URL
+ SERVER_URL="http://spigotmc.info/spigot18/spigot_server.jar"
+
+# Username of non-root user who will run the server
+USERNAME="spooncraft"
+
+# Path of server binary and world
+MCPATH="/home/spooncraft/Hub"
+
+# Number of CPU cores to thread across if using multithreaded garbage collection
+CPU_COUNT="4"
+
+# Where backups go
+ BACKUPPATH="/home/spooncraft/backups/Hub"
+
+# How many days worth of backups to keep (default 7)
+ BACKUPS_TO_KEEP="3"
+
+# Name of Screen session
+SCRNAME="spooncraft-hub"
+
+## The Java command to run the server, uncomment one INVOCATION line only!
+
+# Nothing special, just start the server with 1Gb RAM
+# INVOCATION="java -Xms4000M -Xmx4000M -Djava.net.preferIPv4Stack=true -jar $SERVICE nogui"
+
+# This is what I run my server with, tune your RAM usage accordingly
+# Tested fastest GC - Default parallel new gen collector, plus parallel old gen collector
+INVOCATION="java -Xms4G -Xmx4G -jar minecraft_server.jar -o true nogui"
+
+# I removed these "performance" commands as I don't see any difference with them
+# -XX:+UseFastAccessorMethods -XX:+UseAdaptiveGCBoundary
+
+# Add HugePage support if you have it configured on the OS
+# You should be using HugePages if you give more than 4Gb on the Java invocation line
+# -XX:+UseLargePages
+
+SETTINGS_FILE_WORKING="1"
+## End of settings file
+## ---------------------------------------------------------
